@@ -103,4 +103,3 @@ submitBtn.addEventListener("click", () => {
 
 
 
-// console.log(a_text);
