@@ -179,10 +179,12 @@ const d_text = document.getElementById("d_text");
 const submitBtn = document.getElementById("submit");
 const backBtn = document.getElementById("back");
 let counterNumber = document.getElementById("counterNumber");
-let currentCounter = parseInt(counterNumber.innerText, 10)
+let currentCounter = parseInt(counterNumber.innerText, 10);
 let currentQuiz = 0;
 let score = 0;
+let alertText = document.getElementById("alert-text");
 
+console.log(alertText);
 
 loadQuiz();
 
@@ -196,7 +198,8 @@ function loadQuiz() {
     b_text.innerText = currentQuizData.b;
     c_text.innerText = currentQuizData.c;
     d_text.innerText = currentQuizData.d;
-
+	
+	
 }
 
 function getSelected() {
@@ -224,11 +227,13 @@ submitBtn.addEventListener("click", () => {
     if (answer) {
         if (answer === quizData[currentQuiz].correct) {
             score++;
+			
+			
 
         }
 		
 	currentCounter++
-    counterNumber.innerText = currentCounter
+    counterNumber.innerText = currentCounter;
     currentQuiz++;
 	
         if (currentQuiz < quizData.length) {
@@ -237,7 +242,7 @@ submitBtn.addEventListener("click", () => {
             quiz.innerHTML = `
                 <h2>Du hast folgende Fragen richtig beantwortet ${score}/${quizData.length} </h2>
                 
-                <button onclick="location.reload()">Reload</button>
+                <button onclick="location.reload()">Nochmal</button>
             `;
         }
     }
@@ -252,10 +257,14 @@ if (counterNumber.innerText > 1) {
 	currentCounter--;
     counterNumber.innerText = currentCounter;
     currentQuiz--;
-
+	
+	loadQuiz();
 } else {
-	     location.reload();
-}
+
+	location.reload();
+} 
+
+
 
 });
 

@@ -79,8 +79,6 @@ button {
 	
 }
 
-
-
 button:hover {
     background-color: #d8d8d8;
 }
@@ -88,4 +86,10 @@ button:hover {
 button:focus {
     background-color: #d8d8d8;
     outline: none;
+}
+
+.alert-text {
+	color: red;
+	display: flex; 
+	justify-content: center;
 }
