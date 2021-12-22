@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Counter</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css"></link>
+  </head>
+  <body>
+	<div id="resultArea">
+	
+	</div>
+	
+	<table> 
+		<tr>
+			<td onclick="resetInput()">DEL</td>
+			<td onclick="userInput(8)"></td>
+			<td onclick="userInput(9)"></td>
+			<td onclick="deleteInput()" id="reset">C</td>
+		</tr>
+		<tr>
+			<td onclick="userInput(7)">7</td>
+			<td onclick="userInput(8)">8</td>
+			<td onclick="userInput(9)">9</td>
+			<td onclick="userInput('/')" id="reset">/</td>
+		</tr>
+		<tr>
+			<td onclick="userInput(4)">4</td>
+			<td onclick="userInput(5)">5</td>
+			<td onclick="userInput(6)">6</td>
+			<td onclick="userInput('*')">x</td>
+		</tr>
+		<tr>
+			<td onclick="userInput(1)">1</td>
+			<td onclick="userInput(2)">2</td>
+			<td onclick="userInput(3)">3</td>
+			<td onclick="userInput('+')">+</td>
+		</tr>
+		<tr>
+			<td onclick="userInput(0)">0</td>
+			<td onclick="userInput(',')">,</td>
+			<td onclick="countResult()" id="result">=</td>
+			<td onclick="userInput('-')">-</td>
+		</tr>
+	</table>
+		
+	   <script src="js/app.js" charset="utf-8"></script>
+   </body> 
+
+</html>

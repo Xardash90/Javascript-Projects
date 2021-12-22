@@ -1,0 +1,47 @@
+* {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	margin-top: 0;
+	
+}
+
+table {
+	width: 60%;
+	height: 30vh;
+	background-color: rgb(20, 20, 20);
+	color: white;
+}
+
+td {
+	width: 25%;
+	text-align: center;
+	font-size: 24px;
+
+
+}
+
+td:hover {
+	background-color: rgb(50, 50, 50);
+	cursor: pointer;
+	text-transform: capitalize;
+	font-weight: 800;
+}
+
+#resultArea {
+
+	height: 15vh;
+	width: 60%;
+	background-color: rgb(70, 70, 70);
+	color: white;
+	font-size: 43px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+#result {
+	background-color: #8A2BE2;
+}
+
+
+
