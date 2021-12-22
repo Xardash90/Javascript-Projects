@@ -179,13 +179,13 @@ const d_text = document.getElementById("d_text");
 const submitBtn = document.getElementById("submit");
 let counterElement = document.getElementById("counterNumber");
 
-let currentCounter = 1;
+let currentCounter = 0;
 let currentQuiz = 0;
 let score = 0;
 
+currentCounter = counterElement.innerText
 
-currentCounter = counterElement.innerText;
-console.log(counterElement++);
+
 
 
 loadQuiz();
@@ -232,6 +232,7 @@ submitBtn.addEventListener("click", () => {
         }
 
         currentQuiz++;
+        console.log(currentCounter++);
         if (currentQuiz < quizData.length) {
             loadQuiz();
         } else {
