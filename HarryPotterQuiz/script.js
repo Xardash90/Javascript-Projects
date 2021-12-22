@@ -177,15 +177,10 @@ const b_text = document.getElementById("b_text");
 const c_text = document.getElementById("c_text");
 const d_text = document.getElementById("d_text");
 const submitBtn = document.getElementById("submit");
-let counterElement = document.getElementById("counterNumber");
-
-let currentCounter = 0;
+let counterNumber = document.getElementById("counterNumber");
+let currentCounter = parseInt(counterNumber.innerText, 10)
 let currentQuiz = 0;
 let score = 0;
-
-currentCounter = counterElement.innerText
-
-
 
 
 loadQuiz();
@@ -230,9 +225,9 @@ submitBtn.addEventListener("click", () => {
             score++;
 
         }
-
+currentCounter++
+    counterNumber.innerText = currentCounter
         currentQuiz++;
-        console.log(currentCounter++);
         if (currentQuiz < quizData.length) {
             loadQuiz();
         } else {
