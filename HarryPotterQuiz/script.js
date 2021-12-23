@@ -1,3 +1,4 @@
+
 const quizData = [
     {
         question: "Wer köpft Voldemorts Schlange Nagini mit Gryffindors Schwert?",
@@ -183,9 +184,9 @@ let currentCounter = parseInt(counterNumber.innerText, 10);
 let currentQuiz = 0;
 let score = 0;
 let alertText = document.getElementById("alert-text");
+let alertChildElement = document.getElementById("h3Element");
 
-console.log(alertText);
-
+console.log(alertChildElement);
 loadQuiz();
 
 function loadQuiz() {
@@ -198,9 +199,22 @@ function loadQuiz() {
     b_text.innerText = currentQuizData.b;
     c_text.innerText = currentQuizData.c;
     d_text.innerText = currentQuizData.d;
-	
-	
+
+
 }
+
+// function checkUserInput() {
+    // for (let answerEl of answerEls) {
+        // if (!(answerEl.checked)) {
+            // alertText.style.display = "";
+
+        // } else {
+
+            // Hier weiter machen Todo
+        // }
+
+    // }
+// }
 
 function getSelected() {
     let answer = undefined;
@@ -209,10 +223,19 @@ function getSelected() {
         if (answerEl.checked) {
             answer = answerEl.id;
         }
+
+        // else if (!(answerEl.checked)) {
+        //     document.getElementById("alert-text").style.display = "";
+        // }
+        // else if (answerEl.checked) {
+        //     document.getElementById("alert-text").style.display = "none";
+        // }
     });
 
     return answer;
+
 }
+
 
 function deselectAnswers() {
     answerEls.forEach((answerEl) => {
@@ -221,21 +244,22 @@ function deselectAnswers() {
 }
 
 submitBtn.addEventListener("click", () => {
-    // check to see the answer
+
+    // checkUserInput()
     const answer = getSelected();
 
     if (answer) {
         if (answer === quizData[currentQuiz].correct) {
             score++;
-			
-			
+
+
 
         }
-		
-	currentCounter++
-    counterNumber.innerText = currentCounter;
-    currentQuiz++;
-	
+
+        currentCounter++
+        counterNumber.innerText = currentCounter;
+        currentQuiz++;
+
         if (currentQuiz < quizData.length) {
             loadQuiz();
         } else {
@@ -246,23 +270,25 @@ submitBtn.addEventListener("click", () => {
             `;
         }
     }
+
 });
 
-	
+
 
 
 backBtn.addEventListener("click", () => {
+    // checkUserInput()
+    if (counterNumber.innerText > 1) {
+        currentCounter--;
+        counterNumber.innerText = currentCounter;
+        currentQuiz--;
 
-if (counterNumber.innerText > 1) {
-	currentCounter--;
-    counterNumber.innerText = currentCounter;
-    currentQuiz--;
-	
-	loadQuiz();
-} else {
+        loadQuiz();
+    } else {
 
-	location.reload();
-} 
+        location.reload();
+
+    }
 
 
 

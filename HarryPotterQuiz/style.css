@@ -16,7 +16,7 @@ body {
     margin: 0;
 }
 
-}
+
 
 .counter-quiz{
     font-size: 0.8em;
@@ -92,4 +92,10 @@ button:focus {
 	color: red;
 	display: flex; 
 	justify-content: center;
+}
+
+a {
+   
+    text-decoration: none;
+    color: black;
 }
