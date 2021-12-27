@@ -87,7 +87,8 @@ main {
 }
 
 .overview {
-    background-color: #fff;
+    background-color: #373b69;
+	color: white;
     padding: 2rem;
     position: absolute;
     max-height: 100%;
@@ -106,3 +107,46 @@ main {
 .movie:hover .overview {
     transform: translateY(0);
 }
+
+.button-filter {
+	
+	height: 45px;
+	background-color: #373b69;
+	display: flex; 
+	justify-content: center;
+
+}
+
+.button {
+	text-align: center;
+	padding: 3px;
+	 background-color: transparent;
+    border: 2px solid #22254b;
+    border-radius: 50px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.button-header {
+	width: 800px;
+
+}
+
+footer {
+	background-color: #373b69;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+footer .button {
+	
+	margin: 2px;
+}
+
+button:hover {
+    background-color: #a3a3a3;
+}
+
