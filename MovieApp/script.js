@@ -56,7 +56,7 @@ function showMovies(movies) {
                 )}">${vote_average}</span>
             </div>
             <div class="overview">
-                <h3>Overview:</h3>
+                <h3>Handlung:</h3>
                 ${overview}
             </div>
         `;
