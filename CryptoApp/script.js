@@ -38,6 +38,7 @@ async function showCryptoData(coins) {
 							<i class="fas fa-chart-bar"></i>
 						</div>
         `;
+		console.log(coinEl);
 
         main.appendChild(coinEl);
 	

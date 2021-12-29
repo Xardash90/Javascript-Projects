@@ -5,7 +5,10 @@
 }
 
 body {
-	background-color: #22254b;
+background-color: #0cbaba;
+background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+
+
 
     font-family: "Roboto", sans-serif;
     margin: 0;
@@ -28,6 +31,7 @@ header .content {
 
 
 .container {
+	border-bottom: 1px solid #0cbaba;
 	margin: 0 auto;
 	max-width: 100%;
 	width: 1000px;
@@ -35,7 +39,7 @@ header .content {
 
 nav {
 	
-	background-color: #373b69;
+	
 	display: flex;
 	justify-content: space-between;
 	padding: 0.5rem;
@@ -61,7 +65,7 @@ nav li a {
 }
 
 nav li a:hover {
-    background-color: #732d91;
+    background-color: #0cbaba;
 }
 
 nav li a:focus {
@@ -107,7 +111,7 @@ img {
 }
 
 footer {
-	background-color: #373b69;
+border-top: 1px solid #0cbaba;
 	color: #fff;
 	padding: 1rem;
 	
