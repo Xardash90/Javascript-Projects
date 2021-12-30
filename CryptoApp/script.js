@@ -1,6 +1,6 @@
 
-
-const APIURL = "https://api.coincap.io/v2/assets";
+const APIKEY = "ec4c7048-55d6-495a-bbdc-dcd2f7cadd23";
+const APIURL = "https://api.coincap.io/v2/assets/";
 
 const mains = document.getElementById("main");
 
@@ -14,7 +14,7 @@ async function getCryptoData(url){
 	
 	const coinName = respData.data[0].name;
 	
-	console.log(respData.data)
+
 	showCryptoData(respData.data);
 }
 
@@ -22,26 +22,40 @@ async function getCryptoData(url){
 
 async function showCryptoData(coins) {
 
-
-
+		
 	coins.forEach((coin) => {
+		
 	const { rank, symbol, name, priceUsd, changePercent24Hr  } = coin;	
 	
+	changePercent = Math.round(changePercent24Hr * 100) / 100;
+	changePrice = Math.round(priceUsd * 100) / 100;
+	
+	if (rank <= 5) {
+	let icon =	document.getElementById('fa fa-star');
+	console.log(icon)
+	// icon.style.color = "yellow";
+	}
+	
+	
+	
 
+	
 	    const coinEl = document.createElement("div");
         coinEl.classList.add("card-container");
 
         coinEl.innerHTML = `
           
 					<div class="card-header">
-					<small>Rank: ${ rank}</small> 
+					<small class="rank"><i class="fa fa-star" style="font-size:15px;color:yellow">_</i>Rank: ${rank}</small> 
 						<h3>${name}</h3>				
 					</div>
 				<div class="card-body">
-							<p>${Math.round(priceUsd * 100) / 100} $ <small &bnsp;> ${Math.round(changePercent24Hr * 100) / 100} %</small></p>
+							<p>${changePrice} $ <small id="percentage" &bnsp;> ${changePercent}%</small></p>
 				
 							<i class="fas fa-chart-bar"></i>
 						</div>
+						
+		
         `;
 
 
@@ -49,4 +63,25 @@ async function showCryptoData(coins) {
 	
    });
 }
+
+// function hightlightPercentage(percent) {
+		
+	// if (percent >= 0) {
+		// return "green";
+	// } else {
+		// return "red";
+	// }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 
