@@ -31,8 +31,8 @@ async function showCryptoData(coins) {
 	changePrice = Math.round(priceUsd * 100) / 100;
 	
 	if (rank <= 5) {
-	let icon =	document.getElementById('fa fa-star');
-	console.log(icon)
+	let icon =	document.getElementById('icon');
+	// icon.style.add
 	// icon.style.color = "yellow";
 	}
 	
@@ -46,7 +46,7 @@ async function showCryptoData(coins) {
         coinEl.innerHTML = `
           
 					<div class="card-header">
-					<small class="rank"><i class="fa fa-star" style="font-size:15px;color:yellow">_</i>Rank: ${rank}</small> 
+					<small class="rank"><i id="icon" class="fa fa-star"  style="font-size:15px;color:white"></i>   Rank: ${rank}</small> 
 						<h3>${name}</h3>				
 					</div>
 				<div class="card-body">
