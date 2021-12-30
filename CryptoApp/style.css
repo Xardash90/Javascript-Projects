@@ -5,13 +5,12 @@
 }
 
 body {
-background-color: #0cbaba;
-background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
 
-
-
+	background-color: #0cbaba;
+	background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
     font-family: "Roboto", sans-serif;
     margin: 0;
+	
 }
 
 header {
@@ -35,19 +34,20 @@ header .content {
 	margin: 0 auto;
 	max-width: 100%;
 	width: 1000px;
+
 }
 
 nav {
 	
-	
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	padding: 0.5rem;
 }
 
 nav .logo {
 	padding: 10px;
-	font-size: 1.8rem;
+	font-size: 1.4rem;
 }
 nav ul {
 	display: flex;
@@ -73,15 +73,22 @@ nav li a:focus {
     outline: ;
 }
 
-main {
-	display: flex;
+.headline {
+	border-bottom: 1px solid #0cbaba;
+
+}
+
+	main {
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 .card-container {
 
-	 background-color: #373b69;
+	background-color: #373b69;
     border-radius: 3px;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.7);
     overflow: hidden;
     position: relative;
     margin: 1rem;
@@ -96,7 +103,7 @@ img {
 }
 
 .card-header {
-	
+	border-bottom 
 }
 
 .selected {
@@ -111,8 +118,8 @@ img {
 }
 
 footer {
-
-border-top: 1px solid #0cbaba;
+	flex: wrap;
+	border-top: 1px solid #0cbaba;
 	color: #fff;
 	padding: 1rem;
 	
