@@ -32,21 +32,18 @@ async function showCryptoData(coins) {
 	
 	if (rank <= 5) {
 	let icon =	document.getElementById('icon');
-	// icon.style.add
-	// icon.style.color = "yellow";
+	// icon.add.
+	// icon.style.backgroundColor = "yellow";
+	console.log(icon)
 	}
-	
-	
-	
-
 	
 	    const coinEl = document.createElement("div");
         coinEl.classList.add("card-container");
 
         coinEl.innerHTML = `
-          
+				
 					<div class="card-header">
-					<small class="rank"><i id="icon" class="fa fa-star"  style="font-size:15px;color:white"></i>   Rank: ${rank}</small> 
+					<small class="rank"><i id="icon" class="fa fa-star"  style="font-size:15px;color:"></i>   Rank: ${rank}</small> 
 						<h3>${name}</h3>				
 					</div>
 				<div class="card-body">
@@ -55,7 +52,7 @@ async function showCryptoData(coins) {
 							<i class="fas fa-chart-bar"></i>
 						</div>
 						
-		
+	
         `;
 
 
