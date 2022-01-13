@@ -32,13 +32,33 @@ function createSnowFlake() {
 
 getCryptoData(APIURL);
 
+
 async function getCryptoData(url){
     const resp = await fetch(url);
     const respData = await resp.json();
-	
 	showCryptoData(respData.data);
+
+
+	const coinDatas = respData.data;
 	
+	for (let coinData of coinDatas) {
+		
+		let id = coinData.id;
+		let rank = coinData.rank;
+		let last24Hour = coinData.changePercent24Hr;
+		let coinName = coinData.name;
+		
+
+		console.log(last24Hour);
+	
+		xlabels.push(coinName);
+		ynumber.push(last24Hour);
+	}
+
 }
+
+
+
 
 async function showCryptoData(coins) {	
 	main.innerHTML = "";
@@ -66,9 +86,8 @@ async function showCryptoData(coins) {
 					<small class="rank"><i id="icon" class="fa fa-star"  style="font-size:15px;color:"></i>   Rank: ${rank}</small> 
 						<h3>${name}</h3>				
 					</div>
-				<div class="card-body">
-							<p>${changePrice} $ <small id="percentage" &bnsp;> ${changePercent}%</small></p>
-				
+					<div class="card-body">
+					<p>${changePrice} $ <small id="percentage" &bnsp;> ${changePercent}%</small></p>
 							<i class="fas fa-chart-bar"></i>
 						</div>
         `;
@@ -76,6 +95,9 @@ async function showCryptoData(coins) {
 
    });
 }
+
+
+
 
 
 
@@ -93,6 +115,9 @@ form.addEventListener("submit", (e) => {
 			getCryptoData(APIURL);
 		}
 	});
+	
+	
+	
 
 // function hightlightPercentage(percent) {
 		
@@ -102,11 +127,50 @@ form.addEventListener("submit", (e) => {
 		// return "red";
 	// }
 // }
+	const xlabels = [];
+	const ynumber = [];
 
+	
+// Statistic 
 
+	chartIt() ;
+	async function chartIt() {
+	await getCryptoData(APIURL);
+	const myChart = document.getElementById("myChart").getContext("2d");
+				//Globar Options			
+				//Chart.defaults.global.defaultFontFamily = 'Lato';
+				//Chart.defaults.global.defaultFontSize = 18;
+				//Chart.defaults.global.defaultFontColor = '#777';
+			
+				let massPopChart = new Chart(myChart, {
 
+					type:'horizontalBar', // bar, horizontalBar, Pie, line, doughnut, radar, polarArea
+					data:{
+						labels: xlabels,
+						datasets: [{
+						 label: 'Crypto last 24 Hour',
+							data: ynumber,
+							//backgroundColor:'green'
+							backgroundColor:[
+							'rgb(75, 192, 192, 1.0)',							
+						],
+						borderWidth: 1,
+						borderColor: '#777',
+						hoverBorderWidth: 1,
+						hoverBorderColor: '#000',
+						}]
+					},
+					
+					options:{
+					
+					title:{
+			
 
-
+						text:'Crypto last 24 Hour'
+					}
+					}
+				});
+	}
 })
 
 
