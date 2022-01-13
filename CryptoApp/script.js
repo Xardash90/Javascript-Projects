@@ -1,11 +1,31 @@
+
 document.addEventListener("DOMContentLoaded", () => {
 	
 const APIKEY = "ec4c7048-55d6-495a-bbdc-dcd2f7cadd23";
 const APIURL = "https://api.coincap.io/v2/assets/";
 const SEARCHAPI = "https://api.coincap.io/v2/assets/";
-
-
 const form = document.getElementById("form");
+
+
+
+setInterval(createSnowFlake, 50);
+
+function createSnowFlake() {
+	const snow_flake = document.createElement('i');
+	snow_flake.classList.add('fas');
+	snow_flake.classList.add('fa-snowflake');
+	snow_flake.style.left = Math.random() * window.innerWidth + 'px';
+	snow_flake.style.animationDuration = Math.random() * 3 + 2 + 's';// between 2 - 5 
+	snow_flake.style.opacity = Math.random();
+	snow_flake.fontSize = Math.random() * 10 + 10 + 'px';
+	
+	document.body.prepend(snow_flake);
+	
+	setTimeout(() => {
+		snow_flake.remove();
+	}, 5000)
+		
+}
 
 
 
@@ -19,9 +39,6 @@ async function getCryptoData(url){
 	showCryptoData(respData.data);
 	
 }
-
-
-
 
 async function showCryptoData(coins) {	
 	main.innerHTML = "";
@@ -59,6 +76,8 @@ async function showCryptoData(coins) {
 
    });
 }
+
+
 
 form.addEventListener("submit", (e) => {
 	e.preventDefault();

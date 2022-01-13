@@ -5,14 +5,26 @@
 }
 
 
-
 body {
-
+	/* altertnative  background-color #323975*/
 	background-color: #0cbaba;
 	background-image: linear-gradient(380deg, #0cbaba 0%, #380036 100%);
     font-family: "Roboto", sans-serif;
     margin: 0;
 	
+}
+
+.fa-snowflake {
+	animation: fall linear forwards;
+	color: #fff;
+	position: absolute; 
+	top: -50px;
+}
+
+@keyframes fall{
+	to {
+		transform: translateY(105vh);
+	}
 }
 
 header {
