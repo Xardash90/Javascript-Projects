@@ -7,7 +7,7 @@ const SEARCHAPI = "https://api.coincap.io/v2/assets/";
 const form = document.getElementById("form");
 
 
-	chartIt() ;
+
 setInterval(createSnowFlake, 50);
 
 function createSnowFlake() {
@@ -45,7 +45,7 @@ async function getCryptoData(url){
 		
 		let id = coinData.id;
 		let rank = coinData.rank;
-		let last24Hour = coinData.changePercent24Hr;
+		let last24Hour = Math.round(coinData.changePercent24Hr * 100) / 100;
 		let coinName = coinData.name;
 		
 
