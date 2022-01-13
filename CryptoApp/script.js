@@ -7,7 +7,7 @@ const SEARCHAPI = "https://api.coincap.io/v2/assets/";
 const form = document.getElementById("form");
 
 
-
+	chartIt() ;
 setInterval(createSnowFlake, 50);
 
 function createSnowFlake() {
@@ -49,7 +49,7 @@ async function getCryptoData(url){
 		let coinName = coinData.name;
 		
 
-		console.log(last24Hour);
+	
 	
 		xlabels.push(coinName);
 		ynumber.push(last24Hour);
@@ -144,7 +144,7 @@ form.addEventListener("submit", (e) => {
 			
 				let massPopChart = new Chart(myChart, {
 
-					type:'horizontalBar', // bar, horizontalBar, Pie, line, doughnut, radar, polarArea
+					type:'bar', // bar, horizontalBar, Pie, line, doughnut, radar, polarArea
 					data:{
 						labels: xlabels,
 						datasets: [{
@@ -162,10 +162,8 @@ form.addEventListener("submit", (e) => {
 					},
 					
 					options:{
-					
-					title:{
 			
-
+					title:{
 						text:'Crypto last 24 Hour'
 					}
 					}
