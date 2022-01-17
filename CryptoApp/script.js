@@ -49,8 +49,6 @@ async function getCryptoData(url){
 		let coinName = coinData.name;
 		
 
-	
-	
 		xlabels.push(coinName);
 		ynumber.push(last24Hour);
 	}
@@ -59,6 +57,8 @@ async function getCryptoData(url){
 
 
 
+
+showCryptoData();
 
 async function showCryptoData(coins) {	
 	main.innerHTML = "";
@@ -79,17 +79,21 @@ async function showCryptoData(coins) {
 	
 	    const coinEl = document.createElement("div");
         coinEl.classList.add("card-container");
-
+		
+		
+	
+		
         coinEl.innerHTML = `
           
 					<div class="card-header">
 					<small class="rank"><i id="icon" class="fa fa-star"  style="font-size:15px;color:"></i>   Rank: ${rank}</small> 
+	
 						<h3>${name}</h3>				
 					</div>
 					<div class="card-body">
-					<p>${changePrice} $ <small id="percentage" &bnsp;> ${changePercent}%</small></p>
-							<i class="fas fa-chart-bar"></i>
-						</div>
+						<p id="priceNumbers">${changePrice} $ <small id="percentage" class="${getClassByRate(changePercent)}" &bnsp;><br>${changePercent}%</small></p>
+						<i class="fas fa-chart-bar"></i>
+					</div>
         `;
         main.appendChild(coinEl);
 
@@ -97,10 +101,18 @@ async function showCryptoData(coins) {
 }
 
 
+function getClassByRate(vote) {
+    if (vote >= 8) {
+        return "green";
+    } else if (vote >= 5) {
+        return "orange";
+    } else {
+        return "red";
+    }
+}
 
-
-
-
+showCryptoData();
+	
 form.addEventListener("submit", (e) => {
 	e.preventDefault();
 
@@ -143,6 +155,7 @@ form.addEventListener("submit", (e) => {
 				//Chart.defaults.global.defaultFontColor = '#777';
 			
 				let massPopChart = new Chart(myChart, {
+				
 
 					type:'bar', // bar, horizontalBar, Pie, line, doughnut, radar, polarArea
 					data:{
@@ -150,7 +163,7 @@ form.addEventListener("submit", (e) => {
 						datasets: [{
 						 label: 'Crypto last 24 Hour',
 							data: ynumber,
-							//backgroundColor:'green'
+			
 							backgroundColor:[
 							'rgb(75, 192, 192, 1.0)',							
 						],
@@ -162,15 +175,18 @@ form.addEventListener("submit", (e) => {
 					},
 					
 					options:{
-			
+	
 					title:{
 						text:'Crypto last 24 Hour'
 					}
 					}
+					
+
 				});
 	}
+	
+	
 })
-
 
 
 

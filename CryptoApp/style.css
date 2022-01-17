@@ -95,11 +95,28 @@ nav li a:focus {
 
 	margin-top: 5px;
 	margin-bottom: 10px;
+	margin-left: 10px;
 	font-size: 2rem;
 	font-weight: bold;
+	
+}
+.card-body small {
+	font-size: 1.0rem;
+	font-weight: bold;
+	
 }
 
+p {
 
+margin-top:5px;
+margin-left:3px;
+
+}
+
+.rank {
+	color: #0cbaba;
+	font-weight: bold;
+}
 
 
 .search {
@@ -142,21 +159,28 @@ nav li a:focus {
 }
 
 
-.rank {
-	color: #0cbaba;
+
+h3 {
+	margin-top: 2px;
+	font-size: 1.1rem;
+}
+
+
+.card-body small.green {
+    color: #16c784;
 	font-weight: bold;
 }
 
-img {
-	/* margin: 25px; */
-	 width: 100%;
-
-	
+.card-body small.orange {
+    color: orange;
+	font-weight: bold;
 }
 
-.card-header {
-	border-bottom 
+.card-body small.red {
+    color: red;
+	font-weight: bold;
 }
+
 
 .selected {
 	font-weight: bold;
